@@ -1,0 +1,181 @@
+<head>
+<script src="validate.js"></script>
+<style>
+#header {
+    background-color:darkred;
+    color:white;
+    text-align:left;
+    list-style-type: none;
+	font-family:candara;
+	font-size:22;
+	color:white;
+	word-spacing: 40px;
+    margin: 0;
+	padding:0px;
+}
+
+a {
+	color: white;
+}
+
+li {
+    display: inline;
+}
+
+#body {
+	background-color:white;
+	font-family:candara;
+}
+
+</style>
+
+<div id="header">
+
+<a href="CarollamaWebsite.html"> 
+<img src="New Color Carollama Logo.jpg" width=256px align=left padding=0>
+</a>
+
+<ul>
+   <li><a href="history.html">History</a></li>
+   <li><a href="overview.html">Overview</a></li>
+   <li><a href="events.html">Events</a></li>
+   <li><a href="Volunteer.html">Volunteer</a></li>
+   <li><a href="gallery.html">Gallery</a></li>
+   <li><a href="media.html">Media</a></li>
+   <li><a href="contact.html">Contact</a></li>
+</div>
+
+</head>
+
+<div id="body">  
+  
+  <form action="">
+<fieldset>
+  <legend style='text-align:center'><h3>Volunteer Survey</h3></legend>
+  
+First name:<br>
+<input type="text" name="firstname" id ="1">
+<br>
+Last name:<br>
+<input type="text" name="lastname" id="2">
+<br>
+ <br><br>
+Email: <br> <input type="text" value: "@email.com" id="3"> name@email.com<br>
+Phone: <br> <input type="text" id="4"> ex: 555-555-5555
+<br> <br>
+  
+Please select what areas you are interested helping with:
+<br>
+<br>
+  <table style="width:100%">
+  <tr>
+    <td>EVENT</td>
+    <td>OUTREACH</td>		
+    <td>SPONSORSHIPS</td>
+    <td>ADVERTISING</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="skills" value="Event Planning">Planning</td>
+    <td><input type="checkbox" name="outreach" value="foodbank">Food Bank</td>		
+    <td><input type="checkbox" name="sponsorships" value="corporate">Corporate</td>
+    <td><input type="checkbox" name="advertising" value="social media">Social Media</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="event" value="Planning">Truck Driving</td>
+    <td><input type="checkbox" name="outreach" value="local organizations">Local Organizations</td>		
+    <td><input type="checkbox" name="sponsorships" value="private">Private</td>
+    <td><input type="checkbox" name="advertising" value="Photography">Photography</td>
+  <tr>
+    <td><input type="checkbox" name="event" value="Llama Handling">Llama Handling </td>
+    <td><input type="checkbox" name="outreach" value="neighbothoods">Neighborhoods</td>
+    <td></td>
+    <td></td>
+  <tr>
+    <td><input type="checkbox" name="event" value="Set-up">Set-Up/Take Down</td>
+    <td><input type="checkbox" name="outreach" value="individual carolers">Individual Carolers</td>
+    <td>
+    <td>
+  <tr>
+    <td><input type="checkbox" name="event" value="Crowd Management">Crowd Management</td>
+    <td>
+    <td>
+    <td>
+
+  </tr>
+
+</table>
+    
+
+  
+  <br>
+<form action:"">Why do you want to volunteer for Carollama?<br>
+ <textarea rows="8" cols="100">
+</textarea>
+<br>
+<form action:"">Do you have a unique idea or contribution that we should know about?<br>
+ <textarea rows="8" cols="100">
+</textarea>
+
+<button type="submit" value="Submit" onclick="validateForm()">Submit</button>
+ </form>
+  </fieldset>
+  
+</html>
+</body>
+
+function validateForm(){
+	var fname = document.getElementById("1").value;
+	var lname = document.getElementById("2").value;
+	var email = document.getElementById("3").value;
+	var telephone = document.getElementById("4").value;
+	
+	
+	
+	var test1 = validateName(fname);
+	var test2 = validateName(lname);
+	var test3 = validateEmail(email);
+	var test4 = validateNumber(telephone);
+	var test5 = validateBoxes();
+	
+	if(test1 && test2 && test3 && test4 && test5){
+		return true;
+	}else{
+		return false;
+	}
+	
+	//alert('true');
+	//} else{
+	//	alert('false');
+	//}
+}
+
+function validateName(name){
+	if(name == "")
+		return false;
+	if(name.length >15)
+		return false;
+	if(name.charAt(0) >= 'A' && name.charAt(0) <= 'Z'){
+		return true;
+	}
+}
+
+function validateEmail(email){
+	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	return re.test(email);
+}
+
+function validateNumber(number){
+	var re = /^\d{10}$/;
+	return re.test(number.replace(/[\s-]/g,''));
+}
+
+function validateBoxes(){ //validates that at least one box is checked
+	var nodeList = document.getElementsByTagName("input");
+	for(var i = 0; i<nodeList.length; i++){
+		if(nodeList[i].type=='checkbox'){
+			if(nodeList[i].checked){
+				return true; //at least one of the checkboxes is checked
+			}
+		}
+	} return false;
+}

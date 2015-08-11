@@ -1,0 +1,73 @@
+<HTML>
+
+<!--Overview gives the user a general view of the overall process. The body section has a border with a legend, a brief paragraph description, and a jpeg image of a process diagram. The body is a div written in CSS. Scroll down to see more comments in the body section.
+
+**A new feature is added to the template which is a border around the body section. The border will be in the rest of the tabs.**  -->
+
+<head>
+
+<style>
+#header {
+    background-color:darkred;
+    text-align:left;
+    list-style-type: none;
+	font-family:candara;
+	font-size:22;
+	word-spacing: 40px;
+    margin: 0;
+	padding:0px;
+}
+
+a {
+	color: white;
+}
+
+li {
+    display: inline;
+}
+
+/* #body is a div that contains a paragraph description. I chose the font to be in candara */
+
+#body {
+	font-family:candara;
+}
+
+</style>
+
+<div id="header">
+
+<a href="CarollamaWebsite.html"> 
+<img src="New Color Carollama Logo.jpg" width=256px align=left padding=0>
+</a>
+	
+<ul>
+   <li><a href="history.html">History</a></li>
+   <li><a href="overview.html">Overview</a></li>
+   <li><a href="events.html">Events</a></li>
+   <li><a href="volunteer.html">Volunteer</a></li>
+   <li><a href="gallery.html">Gallery</a></li>
+   <li><a href="media.html">Media</a></li>
+   <li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+</head>
+
+<div id="body">
+
+<!--fieldset allows me to put a border around the body section. Legend allows me to put a title in the border called "Event Overview" -->
+
+<fieldset>
+ <legend style='text-align:center' font-family:"candara"><h3>Event Overview</h3></legend>
+ 
+ <!--Paragraph font prescribed for #body div in header section above-->
+ 
+ <p> When you come to Carollama, most of you will be hitting the doors caroling -- but some of you may be helping out with transportation, directing people, etc. The more people with an awareness on what is going on, the smoother the event will go. This process diagram is to help you have a bird's eye view over what goes on to make this event possible: </p>
+ 
+ <!--Image of Carollama process diagram added here-->
+ 
+<img src=CarollamaBPMNoverview.jpg width=100%>
+</fieldset>
+</div>
+
+</body>

@@ -1,0 +1,137 @@
+<html>
+
+<!--Volunteer: This is my most involved tab. The goal is to allow users who want to volunteer fill out a survey and submit their information. Most of the template has been explained in prior tabs, the main addition here are form elements like textfields, a table, and checkboxes. Scroll down to see more comments in the body section.
+
+**I tried to validate the surveywith javascript, however, my I haven't figured out how to jive html and js in my text editor... Therefore, for the purpose of this project, and for a cleaner submission, I omitted to include javascript. However, you can check out my last codepen assignment to see how I used javascript to validate this form** -->
+
+<head>
+<script src="validate.js"></script>
+<style>
+#header {
+    background-color:darkred;
+    text-align:left;
+    list-style-type: none;
+	font-family:candara;
+	font-size:22;
+	word-spacing: 40px;
+    margin: 0;
+	padding:0px;
+}
+
+a {
+	color: white;
+}
+
+li {
+    display: inline;
+}
+
+#body {
+	font-family:candara;
+}
+
+</style>
+
+<div id="header">
+
+<a href="CarollamaWebsite.html"> 
+<img src="New Color Carollama Logo.jpg" width=256px align=left padding=0>
+</a>
+
+<ul>
+   <li><a href="history.html">History</a></li>
+   <li><a href="overview.html">Overview</a></li>
+   <li><a href="events.html">Events</a></li>
+   <li><a href="volunteer.html">Volunteer</a></li>
+   <li><a href="gallery.html">Gallery</a></li>
+   <li><a href="media.html">Media</a></li>
+   <li><a href="contact.html">Contact</a></li>
+</div>
+
+</head>
+
+<div id="body">  
+  
+  <form action="">
+<fieldset>
+  <legend style='text-align:center'><h3>Volunteer Survey</h3></legend>
+  
+<!-- Text fields for first name, last, email, and phone number. Each form field is categorized with an id number so that it can be identified in a database. I would have javascript validate that each of these fields are filled in correctly before the survey can be submitted-->
+  
+First name:<br>
+<input type="text" name="firstname" id ="1">
+<br>
+Last name:<br>
+<input type="text" name="lastname" id="2">
+<br>
+ <br><br>
+Email: <br> <input type="text" value: "@email.com" id="3"> name@email.com<br>
+Phone: <br> <input type="text" id="4"> ex: 555-555-5555
+<br> <br>
+
+<!--Volunteer table -
+
+I inserted a 4x6 table with 13 checkboxes. The title of each column designates the area of need. Under each title are task items with check boxes that a volunteer can indicate they can help with. With javascript validation I would require that at least one checkbox is checked in order for the survey to be sent. -->
+
+Please select what areas you are interested helping with:
+<br>
+<br>
+  <table style="width:100%">
+  <tr>
+    <td>EVENT</td>
+    <td>OUTREACH</td>		
+    <td>SPONSORSHIPS</td>
+    <td>ADVERTISING</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="skills" value="Event Planning">Planning</td>
+    <td><input type="checkbox" name="outreach" value="foodbank">Food Bank</td>		
+    <td><input type="checkbox" name="sponsorships" value="corporate">Corporate</td>
+    <td><input type="checkbox" name="advertising" value="social media">Social Media</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="event" value="Planning">Truck Driving</td>
+    <td><input type="checkbox" name="outreach" value="local organizations">Local Organizations</td>		
+    <td><input type="checkbox" name="sponsorships" value="private">Private</td>
+    <td><input type="checkbox" name="advertising" value="Photography">Photography</td>
+  <tr>
+    <td><input type="checkbox" name="event" value="Llama Handling">Llama Handling </td>
+    <td><input type="checkbox" name="outreach" value="neighbothoods">Neighborhoods</td>
+    <td></td>
+    <td></td>
+  <tr>
+    <td><input type="checkbox" name="event" value="Set-up">Set-Up/Take Down</td>
+    <td><input type="checkbox" name="outreach" value="individual carolers">Individual Carolers</td>
+    <td>
+    <td>
+  <tr>
+    <td><input type="checkbox" name="event" value="Crowd Management">Crowd Management</td>
+    <td>
+    <td>
+    <td>
+
+  </tr>
+
+</table>
+    
+<!--Basic get-to-know-you questions. Yes, I would also have these be required fields by javascript. It's important that you recruit the right people for the job. -->
+  
+<!--Text area with free response for why you want to volunteer for Carollama -->  
+<br>
+<form action:"">Why do you want to volunteer for Carollama?<br>
+ <textarea rows="8" cols="100">
+</textarea>
+
+<!--Text area with what you can offer Carollama -->
+<br>
+<form action:"">Do you have a unique idea or contribution that we should know about?<br>
+ <textarea rows="8" cols="100">
+</textarea>
+
+<!-- Submit button-->
+<button type="submit" value="Submit" onclick="validateForm()">Submit</button>
+ </form>
+  </fieldset>
+  
+</html>
+</body>
